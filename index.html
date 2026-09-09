@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, maximum-scale=1.0, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>Simple Signature v1</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/coloris.css">
+</head>
+
+<body>
+    <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+        <symbol id="i-user" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="3.5" />
+            <path d="M4.5 20c.8-4 3.2-6 7.5-6s6.7 2 7.5 6" />
+        </symbol>
+        <symbol id="i-briefcase" viewBox="0 0 24 24">
+            <rect x="3" y="7" width="18" height="13" rx="2" />
+            <path d="M8 7V5h8v2M3 12h18" />
+        </symbol>
+        <symbol id="i-building" viewBox="0 0 24 24">
+            <path d="M4 21V4h11v17M15 9h5v12M8 8h3M8 12h3M8 16h3" />
+        </symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24">
+            <path
+                d="M7 3h3l1.5 5-2.3 1.5a15 15 0 0 0 5.3 5.3L16 12.5l5 1.5v3c0 1.1-.9 2-2 2C10.2 19 5 13.8 5 5c0-1.1.9-2 2-2Z" />
+        </symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24">
+            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+            <circle cx="12" cy="10" r="2.5" />
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m4 7 8 6 8-6" />
+        </symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" />
+        </symbol>
+        <symbol id="i-save" viewBox="0 0 24 24">
+            <path d="M5 3h12l3 3v15H5Z" />
+            <path d="M8 3v6h8V3M8 21v-7h8v7" />
+        </symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24">
+            <rect x="8" y="8" width="12" height="12" rx="2" />
+            <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" />
+        </symbol>
+        <symbol id="i-reset" viewBox="0 0 24 24">
+            <path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.5M4 4v4.5h4.5" />
+        </symbol>
+        <symbol id="i-background" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="3" />
+            <path d="m5 17 4.5-4.5 3.2 3.2 2.2-2.2L19 17" />
+            <circle cx="9" cy="8.5" r="1.5" />
+        </symbol>
+
+        <symbol id="i-palette" viewBox="0 0 24 24">
+            <path
+                d="M12 3a9 9 0 1 0 0 18h1.1a2.1 2.1 0 0 0 0-4.2h-.8a1.5 1.5 0 0 1 0-3H15a6 6 0 0 0 6-6A4.8 4.8 0 0 0 16.2 3Z" />
+            <circle cx="7.5" cy="10" r="1" />
+            <circle cx="10" cy="6.8" r="1" />
+            <circle cx="14" cy="7" r="1" />
+        </symbol>
+
+        <symbol id="i-sun" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4" />
+            <path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+        </symbol>
+
+        <symbol id="i-moon" viewBox="0 0 24 24">
+            <path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z" />
+        </symbol>
+        <symbol id="i-chevron-down" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+            <path d="M5 13l4 4L19 7" />
+        </symbol>
+        <symbol id="i-close" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6L6 18" />
+        </symbol>
+        <symbol id="i-warning" viewBox="0 0 24 24">
+            <path d="M12 3 22 21H2L12 3z" />
+            <path d="M12 9v5" />
+            <circle cx="12" cy="17" r="1" />
+        </symbol>
+        <symbol id="i-info" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 10v6" />
+            <circle cx="12" cy="7" r="1" />
+        </symbol>
+    </svg>
+    <div class="wrap">
+        <header>
+            <a href="#" onClick="document.location.reload(true)"><img src="assets/images/simple_signature_logo.png"
+                    alt="Simple Signature"></a>
+        </header>
+        <div class="hero">
+            <h1>Create a clean email signature.</h1>
+            <p class="intro">Edit your details, check both environments, then copy the signature into your email client.
+            </p>
+        </div>
+        <div class="grid">
+            <aside class="panel">
+                <h2>Signature details</h2>
+                <div class="section">
+                    <h3>
+                        <svg class="ui-icon">
+                            <use href="#i-background" />
+                        </svg>
+                        Background
+                    </h3>
+                    <div class="background-mode"><button type="button" class="active"
+                            data-bg-mode="transparent">Transparent</button><button type="button"
+                            data-bg-mode="color">Color</button></div>
+                    <div class="colors background-colors is-disabled" data-field="background"></div>
+                </div>
+                <div class="section color-schemes">
+                    <div class="section-title">
+                        <svg class="ui-icon">
+                            <use href="#i-palette" />
+                        </svg>
+                        Color scheme
+                    </div>
+
+                    <p class="section-hint">
+                        Start with a readable preset, then adjust individual colors if needed.
+                    </p>
+
+                    <div class="scheme-grid">
+                        <button type="button" class="scheme active" data-scheme="simple-blue" title="Simple Blue">
+                            <span class="scheme-dot"></span>
+                            <span class="scheme-dot"></span>
+                            <span class="scheme-dot"></span>
+                            <span class="scheme-dot"></span>
+                            <span class="scheme-dot"></span>
+                            <b>Simple Blue</b>
+                        </button>
+
+                        <button type="button" class="scheme" data-scheme="ocean" title="Ocean">
+                            <span class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span>
+                            <b>Ocean</b>
+                        </button>
+
+                        <button type="button" class="scheme" data-scheme="emerald" title="Emerald">
+                            <span class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span>
+                            <b>Emerald</b>
+                        </button>
+
+                        <button type="button" class="scheme" data-scheme="violet" title="Violet">
+                            <span class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span>
+                            <b>Violet</b>
+                        </button>
+
+                        <button type="button" class="scheme" data-scheme="rose" title="Rose">
+                            <span class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span>
+                            <b>Rose</b>
+                        </button>
+
+                        <button type="button" class="scheme" data-scheme="amber" title="Amber">
+                            <span class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span>
+                            <b>Amber</b>
+                        </button>
+
+                        <button type="button" class="scheme" data-scheme="crimson" title="Crimson">
+                            <span class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span>
+                            <b>Crimson</b>
+                        </button>
+
+                        <button type="button" class="scheme" data-scheme="graphite" title="Graphite">
+                            <span class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span>
+                            <b>Graphite</b>
+                        </button>
+
+                        <button type="button" class="scheme" data-scheme="indigo" title="Indigo">
+                            <span class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span>
+                            <b>Indigo</b>
+                        </button>
+
+                        <button type="button" class="scheme" data-scheme="teal" title="Teal">
+                            <span class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span><span class="scheme-dot"></span><span
+                                class="scheme-dot"></span>
+                            <b>Teal</b>
+                        </button>
+                    </div>
+                </div>
+                <div class="section" id="content">
+                    <h3>Company Logo</h3>
+
+                    <div class="logo-drop" id="logoDrop">
+
+                        <div class="logo-url-control display-grid">
+                            <input class="mobile-input" type="url" id="logoUrl"
+                                placeholder="https://example.com/logo.png">
+                            <div class="logoActions display-grid">
+                                <button type="button" class="btn-primary" id="logoUrlAdd">Add</button>
+                                <button type="button" class="btn-primary logo-remove" id="logoRemove">Remove</button>
+                            </div>
+                        </div>
+
+                        <p class="logo-hint">
+                            PNG, JPG, GIF or WebP · Maximum display size 160 × 55 px
+                        </p>
+                    </div>
+                    <div class="identity-scroll">
+                        <div class="identity-grid">
+                            <div class="identity-row photo-row">
+                                <div>
+                                    <label>
+                                        <svg class="ui-icon">
+                                            <use href="#i-background" />
+                                        </svg>Photo URL</label>
+                                    <input type="url" id="photoUrl" class="mobile-input"
+                                        placeholder="https://example.com/photo.jpg">
+                                </div>
+                                <div class="photo-actions display-grid">
+                                    <button type="button" class="btn-primary" id="photoAdd">Add</button>
+                                    <button type="button" class="btn-primary" id="photoRemove">Remove</button>
+                                </div>
+                                <label id="PhotoLabel" class="checkbox">
+                                    <input type="checkbox" id="photoDisabled" />
+                                    No photo
+                                </label>
+                            </div>
+                            <div class="identity-row">
+                                <div>
+                                    <label>
+                                        <svg class="ui-icon">
+                                            <use href="#i-user" />
+                                        </svg>Name</label>
+                                    <input data-field="name" class="mobile-input" value="Jonathan Richardson">
+                                </div>
+                                <div><label>Color</label><input data-field="nameColor" class="mobile-input"
+                                        value="#0244e0"></div>
+                                <div><label>Size</label><select data-field="nameSize">
+                                        <option>12</option>
+                                        <option selected>14</option>
+                                        <option>16</option>
+                                        <option>18</option>
+                                    </select></div>
+                            </div>
+                            <div class="identity-row">
+                                <div><label><svg class="ui-icon">
+                                            <use href="#i-briefcase" />
+                                        </svg>Position</label><input class="mobile-input" data-field="position"
+                                        value="Senior UX/UI & Front-end Developer"></div>
+                                <div><label>Color</label><input data-field="positionColor" value="#555555"></div>
+                                <div><label>Size</label><select data-field="positionSize">
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option selected>12</option>
+                                        <option>14</option>
+                                    </select></div>
+                            </div>
+                            <div class="identity-row">
+                                <div><label><svg class="ui-icon">
+                                            <use href="#i-building" />
+                                        </svg>Company</label><input class="mobile-input" data-field="company"
+                                        value="Creative Digital Solutions"></div>
+                                <div><label>Color</label><input class="mobile-input" data-field="companyColor"
+                                        value="#999999"></div>
+                                <div><label>Size</label><select data-field="companySize">
+                                        <option>9</option>
+                                        <option selected>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="display-grid contact-fields">
+                        <div class="contact-field">
+                            <label>
+                                <svg class="ui-icon">
+                                    <use href="#i-phone" />
+                                </svg>
+                                Phone
+                            </label>
+                            <input data-field="phone" class="mobile-input" value="+359 888 123 456">
+                        </div>
+
+                        <div class="contact-field">
+                            <label>
+                                <svg class="ui-icon">
+                                    <use href="#i-pin" />
+                                </svg>
+                                Location
+                            </label>
+                            <input class="mobile-input" data-field="location" value="Sofia, Bulgaria">
+                        </div>
+
+                        <div class="contact-field">
+                            <label>
+                                <svg class="ui-icon">
+                                    <use href="#i-mail" />
+                                </svg>
+                                Email
+                            </label>
+                            <input class="mobile-input" data-field="email" value="jonathan.richardson@example.com">
+                        </div>
+
+                        <div class="contact-field">
+                            <label>
+                                <svg class="ui-icon">
+                                    <use href="#i-globe" />
+                                </svg>
+                                Website
+                            </label>
+                            <input class="mobile-input" data-field="website" value="nikolaisabev.eu">
+                        </div>
+                    </div>
+                    <div class="contact-field">
+                        <div class="icon-contact-fields display-grid">
+                            <div>
+                                <label>
+                                    <svg class="ui-icon">
+                                        <use href="#i-globe" />
+                                    </svg>Icon color</label>
+                                <input class="mobile-input" data-field="iconColor" value="#0B63CE">
+                            </div>
+                            <div>
+                                <label>Text color</label>
+                                <input class="mobile-input" data-field="contactTextColor" value="#334E68">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-overlay" id="resetModal" aria-hidden="true">
+                    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle">
+
+                        <button type="button" class="modal-close" id="resetModalClose">
+                            <span aria-hidden="true">×</span>
+                            Close
+                        </button>
+
+                        <div class="modal-content">
+                            <h3 id="resetModalTitle">Reset signature?</h3>
+
+                            <p>
+                                This will remove your current changes and restore the signature
+                                to its default settings.
+                            </p>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button type="button" class="btn-primary" id="resetModalNo">
+                                No, keep it
+                            </button>
+
+                            <button type="button" class="btn-primary" id="resetModalYes" class="danger">
+                                Yes, reset
+                            </button>
+                        </div>
+
+                    </div>
+                </div>                
+            </aside>
+            <main class="preview-sticky">
+                <div class="previews">
+                    <div class="steps show-mobile">
+                        <h2 class="steps-intro">
+                            Because some mobile mail clients do not support HTML signatures,
+                            we recommend these steps for the best result:
+                        </h2>
+
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Save</h4>
+                                <p class="note">Your information stays in this browser. <strong>Save</strong> stores it only in <strong>local storage</strong>. <strong>Reset</strong>
+                    removes it from <strong>this device</strong>.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Continue on Desktop</h4>
+                                <p>
+                                    Continue editing your signature on a desktop computer
+                                    for the best email client compatibility.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Share the link</h4>
+                                <p>
+                                    Share the link to your desktop PC or another trusted device
+                                    using Viber, Gmail, or another app. Then copy the link and
+                                    follow the video instructions below.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Reset when needed</h4>
+                                <p>
+                                    You can reset your signature or clear your local storage
+                                    information at any time.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="previewTitle">
+                        <h2>Live Preview</h2>
+                        <span>Simulation only — email clients can render colors differently in
+                            light and dark mode.</span>
+                    </div>
+                    <div class="mode">
+                        <div class="canvas light">
+                            <div class="signature" id="lightPreview"></div>
+                        </div>
+                        <div class="canvas dark">
+                            <div class="dark-mask">
+                                <div class="signature" id="darkPreview"></div>
+                            </div>
+                        </div>
+                        <div class="preview-divider">
+                            <svg class="ui-icon">
+                                <use href="#i-sun" />
+                            </svg>
+                            <svg class="ui-icon ui-icon-moon">
+                                <use href="#i-moon" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="signature-status">
+                    <div class="signature-status__bar">
+                        <div class="signature-status__progress"></div>
+                    </div>
+
+                    <div class="signature-status__info">
+                        <span class="signature-status__count">0 / 5000 characters</span>
+                        <span class="signature-status__message">Signature size is OK.</span>
+                    </div>
+                </div>
+                <p>Your details remain in your browser. <strong>Save</strong> uses only this device's <strong>local storage</strong>.</p>
+                <p>No data is sent to or stored on our servers.</p>
+                <div class="preview-actions">
+                    <button id="saveDesk" class="btn-primary">
+                        <svg class="ui-icon">
+                            <use href="#i-save" />
+                        </svg>Save
+                    </button>
+                    <button class="copy btn-primary show-desktop" id="copyDesk">
+                        <svg class="ui-icon">
+                            <use href="#i-copy" />
+                        </svg>Copy signature
+                    </button>
+                    <button class="btn-primary" id="resetDesk">
+                        <svg class="ui-icon">
+                            <use href="#i-reset" />
+                        </svg>Reset
+                    </button>
+                </div>
+                <div class="buymeacoffe-actions">
+                    <h4>Free to use. Helpful enough for a coffee?</h4>
+                    <a class="buy-coffee" href="https://www.buymeacoffee.com/sabev" target="_blank">
+                        <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=sabev&button_colour=5F7FFF&font_colour=ffffff&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00">
+                    </a>
+                </div>
+            </main>
+        </div>
+        <!-- div class="preview-info">
+            <h2>How to add your signature</h2>
+            <div class="tutorial-video">
+                <iframe width="960" height="540" src="https://www.youtube.com/embed/4L6W8TWF8wc?list=RD4L6W8TWF8wc"
+                    title="🌴 Jungle Smoke Riddims | Roots Reggae Dub Vibes for Soul Healing" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div -->
+        <footer class="footer">
+            &copy; Nikolay Sabev · <a href="https://nikolaisabev.eu" target="_blank">nikolaisabev.eu</a><a
+                href="https://www.linkedin.com/in/nikolay-sabev-a895872b/" target="_blank">LinkedIn</a><a
+                href="mailto:nikolai.sve.sabev@gmail.com">✉ Email</a>
+        </footer>
+    </div>
+    <div id="toast-container"></div>
+    <script src="assets/js/coloris.js"></script>
+    <script src="assets/js/app.js"></script>
+    </script>
+</body>
+
+</html>
